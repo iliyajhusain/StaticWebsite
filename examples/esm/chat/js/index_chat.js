@@ -14,9 +14,9 @@ let botOptions = chatConfig.botOptions;
 
 botOptions.JWTUrl ='https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts';
 botOptions.userIdentity = 'iliyajhushens@pronixinc.com';// Provide users email id here
-botOptions.botInfo = { name: "basspro2.0", "_id": "st-d1a76709-cdff-5e63-9693-be6c311e8eb7" }; // bot name is case sensitive
-botOptions.clientId ="cs-d1365845-cad0-5e04-a61f-8c7a1c79c81a";
-botOptions.clientSecret = "8E08KlI6c3QJNFMBR/2tlwsiKd8l64Wg11lZgNTwdek=";
+botOptions.botInfo = { name: "basspro2.0", "_id": "st-0404e56c-fa75-5efd-af4c-a40e67596ee9" }; // bot name is case sensitive
+botOptions.clientId ="cs-73659c83-0014-57fd-bd75-0e8b64d49a4e";
+botOptions.clientSecret = "UdhcF+L71ebZdNOdNdGHz9bzRi9SILMnDs3moc2FBzs=";
 
 
 /*
@@ -41,15 +41,15 @@ botOptions.JWTUrl =
     'https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts';
 botOptions.botInfo = {
     name: 'basspro2.0',
-    _id: 'st-d1a76709-cdff-5e63-9693-be6c311e8eb7',
+    _id: 'st-0404e56c-fa75-5efd-af4c-a40e67596ee9',
     customData: {
         automationName: 'CX_R2.4_Dev',
     },
 } // bot name is case sensitive
 botOptions.userIdentity =
     "uuid" + '-' + botOptions.botInfo.customData.automationName
-botOptions.clientId = "cs-d1365845-cad0-5e04-a61f-8c7a1c79c81a"
-botOptions.clientSecret = "8E08KlI6c3QJNFMBR/2tlwsiKd8l64Wg11lZgNTwdek="
+botOptions.clientId = "cs-73659c83-0014-57fd-bd75-0e8b64d49a4e"
+botOptions.clientSecret = "UdhcF+L71ebZdNOdNdGHz9bzRi9SILMnDs3moc2FBzs="
 
 chatConfig.branding = {
     "general": {
@@ -122,13 +122,13 @@ chatConfig.branding = {
                 //     "title": "Hello 😊. ABC \n  I am your Virtual Shopping Assistant.\n How can I help you!"
                 // }
             ],
-            // "buttons": [
-            //     {
-            //         "title": "Send Message",
-            //         "type": "postback",
-            //         "value": ""
-            //     }
-            // ]
+            "buttons": [
+                {
+                    "title": "Ask a Question",
+                    "type": "postback",
+                    "value": ""
+                }
+            ]
         },
         "sound": "themeOne",
         "alignment": "inline",
@@ -265,7 +265,7 @@ chatConfig.branding = {
         },
         "icons_color": "#000000",
         "title": {
-            "name": "RetailAssist",
+            "name": "BASS PRO 2.0",
             "color": "#000000"
         },
         "sub_title": {
