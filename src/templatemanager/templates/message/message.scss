@@ -206,7 +206,8 @@
 
             .bubble-msg {
                 background: var(--agent-bubble-msg-bg);
-                border-radius: 8px 8px 2px 8px;
+                // border-radius: 8px 8px 2px 8px;
+                border-radius: 10px 10px 10px 0px;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 17px;
@@ -416,7 +417,8 @@
         &.chat-bubble-style-2 {
             .bubble-msg-with-img {
                 .bubble-msg {
-                    border-radius: 8px 2px 8px 8px;
+                    // border-radius: 8px 2px 8px 8px;
+                    border-radius: 10px 0px 10px 10px;
                 }
             }
         }
@@ -473,10 +475,10 @@
             }
 
             .you-text {
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 12px;
                 line-height: 15px;
-                color: var(--name-color); // var(--gloabl-text-color);
+                // color: var(--name-color); // var(--gloabl-text-color);
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
@@ -498,7 +500,8 @@
 
             .bubble-msg {
                 background: var(--bot-bubble-msg-bg);
-                border-radius: 8px 8px 2px 8px;
+                // border-radius: 8px 8px 2px 8px;
+                border-radius: 10px 10px 10px 0px;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 17px;
@@ -720,6 +723,7 @@
     .agent-bubble-comp .agent-bubble-content .bubble-msg-with-img .bubble-msg {
         // background: #667085;
         background: #2d4739;
+        border-radius: 10px 10px 0px 10px;
     }
 
     .bot-bubble-comp {
@@ -758,7 +762,7 @@
     .bot-bubble-content {
         .top-info {
             .you-text {
-                display: none;
+                // display: none;
             }
 
             .time-tamp {

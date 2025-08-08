@@ -2,13 +2,48 @@
 
 import './chatWidgetBody.scss';
 import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 
 export function ChatWidgetBody() {
+// const allQuestions = [
+//     "What type of boats are best for fish and play?",
+//     "What type of boat is best for lakes & rivers?",
+//     "How does buying a boat work?",
+//     "Which boat brand is most reliable?",
+//     "Are pontoon boats good for families?",
+//     "How much maintenance does a boat need?",
+//     "What's the difference between inboard and outboard motors?",
+//     "Can I finance a boat?",
+//     "What safety gear is required on boats?",
+//     "How do I register a boat?"
+// ];
 
+// function shuffleArray(array: string[]) {
+//     return array
+//         .map(value => ({ value, sort: Math.random() }))
+//         .sort((a, b) => a.sort - b.sort)
+//         .map(({ value }) => value);
+// }
+// const [shuffledQuestions, setShuffledQuestions] = useState<string[]>([]);
+
+//     useEffect(() => {
+//         const shuffled = shuffleArray(allQuestions).slice(0, 3); // show 3 questions randomly
+//         setShuffledQuestions(shuffled);
+//     }, []);
     return (
         <div className="chat-widget-body-wrapper" aria-label="chat widget body">
             <div className="kore-sdk-error-section hide"></div>
             <div className="prev-message-list"></div>
+
+ {/* <div className="suggested-questions-container">
+                {shuffledQuestions.map((question, index) => (
+                    <button key={index} className="question-button">
+                        <span className="chat-icon">💬</span> {question}
+                    </button>
+                ))}
+            </div> */}
+
+
             {/* <div className="agent-bubble-comp">
                 <div className="agent-bubble-content">
                     <div className="top-info">

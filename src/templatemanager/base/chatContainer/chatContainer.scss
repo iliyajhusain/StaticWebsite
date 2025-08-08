@@ -151,8 +151,8 @@
 
   /* Media query for mobile phones (landscape and portrait) */
   @media only screen and (max-width: 480px) {
-    // height: calc(100% - 75px);
-     height: 60% !important ;
+    height: calc(100% - 75px);
+    //  height: 100% !important ;
     bottom: 0;
   }
 

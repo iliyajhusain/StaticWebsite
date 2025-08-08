@@ -98,7 +98,7 @@ const BrandingJSON = {
     "secondary_color": "#FFFFFF"
   },
   "welcome_screen": {
-    "show": false,
+    "show": true,
     "layout": "medium",
     "logo": {
       "logo_url": "kore.png",
@@ -245,7 +245,7 @@ const BrandingJSON = {
     },
     "buttons": {
       "close": {
-        "show": true,
+        "show": false,
         "icon": ""
       },
       "minimise": {
@@ -253,7 +253,7 @@ const BrandingJSON = {
         "icon": ""
       },
       "expand": {
-        "show": false,
+        "show": true,
         "icon": ""
       },
       "reconnect": {
@@ -284,7 +284,7 @@ const BrandingJSON = {
     "compose_bar": {
       "bg_color": "#FFFFFE",
       "outline-color": "#175CD3",
-      "placeholder": "Type a message"
+      "placeholder": "How can I help you?"
     },
     "icons_color": "#101828",
     "buttons": {
@@ -311,7 +311,7 @@ const BrandingJSON = {
         "icon": ""
       },
       "microphone": {
-        "show": true,
+        "show": false,
         "icon": ""
       },
       "attachment": {

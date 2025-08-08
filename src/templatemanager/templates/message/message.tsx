@@ -8,7 +8,7 @@ import IconsManager from '../../base/iconsManager';
 export function Message(props: any) {
     const msgData = props.msgData;
     const hostInstance = props.hostInstance;
-    console.log('Message Template', msgData);
+    console.log('Message Template=======', msgData);
     // console.log('Host Instance', hostInstance);
     const iconHelper = new IconsManager();
     const [brandingInfo, updateBrandingInfo] = useState(hostInstance.config.brandingCopy);

@@ -214,20 +214,23 @@ const RetailBrandingJSON = {
             "color": "#000000"
         },
         "sub_title": {
-            "name": "",
+            "name": "BASS PRO 2.0",
             "color": "#000000"
         },
         "buttons": {
             "close": {
-                "show": true,
+                // "show": true,
+                 "show": false,
                 "icon": "/images/close-large.svg"
             },
             "minimise": {
-                "show": "true|false",
+                // "show": "true|false",
+                 "show": false,
                 "icon": "url|icomoon"
             },
             "expand": {
-                "show": "true|false",
+                // "show": "true|false",
+                 "show": true,
                 "icon": "url|icomoon"
             },
             "reconnect": {
@@ -258,7 +261,7 @@ const RetailBrandingJSON = {
         "compose_bar": {
             "bg_color": "#fffffe",
             "outline-color": "#E5E5E5",
-            "placeholder": "Type a message"
+            "placeholder": "How can I help you?"
         },
         "icons_color": "#000000",
         "buttons": {
@@ -290,7 +293,7 @@ const RetailBrandingJSON = {
                 "icon": "url|icomoon"
             },
             "microphone": {
-                "show": true,
+                "show": false,
                 "icon": "url|icomoon"
             },
             "attachment": {
@@ -333,7 +336,7 @@ const RetailBrandingJSON = {
               "type": "" // default
             },
             "title": {
-                "name": "Welcome to RetailAssist",
+                "name": "Welcome to AI OUTFITTER",
                 "color": "#0D6EFD"
             },
             "sub_title": {

@@ -182,11 +182,11 @@ declare const RetailBrandingJSON: {
                 icon: string;
             };
             minimise: {
-                show: string;
+                show: boolean;
                 icon: string;
             };
             expand: {
-                show: string;
+                show: boolean;
                 icon: string;
             };
             reconnect: {

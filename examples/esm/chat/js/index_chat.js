@@ -14,9 +14,9 @@ let botOptions = chatConfig.botOptions;
 
 botOptions.JWTUrl ='https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts';
 botOptions.userIdentity = 'iliyajhushens@pronixinc.com';// Provide users email id here
-botOptions.botInfo = { name: "basspro2.0", "_id": "st-d1a76709-cdff-5e63-9693-be6c311e8eb7" }; // bot name is case sensitive
-botOptions.clientId ="cs-d1365845-cad0-5e04-a61f-8c7a1c79c81a";
-botOptions.clientSecret = "8E08KlI6c3QJNFMBR/2tlwsiKd8l64Wg11lZgNTwdek=";
+botOptions.botInfo = { name: "basspro2.0", "_id": "st-164b5637-4b2b-5804-a1ba-2b659e2c4e55" }; // bot name is case sensitive
+botOptions.clientId ="cs-68cd376d-6f2d-52a4-8698-de9d0d54b88c";
+botOptions.clientSecret = "vJlRJUpIYTsNVIxOmB/i2cSf7pCKzISw6oSLyjZGHgQ=";
 
 
 /*
@@ -40,16 +40,16 @@ https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
 botOptions.JWTUrl =
     'https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts';
 botOptions.botInfo = {
-    name: 'basspro2.0',
-    _id: 'st-d1a76709-cdff-5e63-9693-be6c311e8eb7',
+    name: 'AI Outfitter',
+    _id: 'st-164b5637-4b2b-5804-a1ba-2b659e2c4e55',
     customData: {
         automationName: 'CX_R2.4_Dev',
     },
 } // bot name is case sensitive
 botOptions.userIdentity =
     "uuid" + '-' + botOptions.botInfo.customData.automationName
-botOptions.clientId = "cs-d1365845-cad0-5e04-a61f-8c7a1c79c81a"
-botOptions.clientSecret = "8E08KlI6c3QJNFMBR/2tlwsiKd8l64Wg11lZgNTwdek="
+botOptions.clientId = "cs-68cd376d-6f2d-52a4-8698-de9d0d54b88c"
+botOptions.clientSecret = "vJlRJUpIYTsNVIxOmB/i2cSf7pCKzISw6oSLyjZGHgQ="
 
 chatConfig.branding = {
     "general": {
@@ -265,7 +265,7 @@ chatConfig.branding = {
         },
         "icons_color": "#000000",
         "title": {
-            "name": "RetailAssist",
+            "name": "AI OUTFITTER",
             "color": "#000000"
         },
         "sub_title": {
@@ -388,7 +388,7 @@ chatConfig.branding = {
               "type": "" // default
             },
             "title": {
-                "name": "Welcome to RetailAssist",
+                "name": "Welcome to AI OUTFITTER",
                 "color": "#0D6EFD"
             },
             "sub_title": {

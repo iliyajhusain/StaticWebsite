@@ -11,6 +11,7 @@ export function ListMore(props: any) {
     const iconHelper = new IconsManager();
     const hostInstance = props.hostInstance;
     const msgData = props.msgData.msgData;
+    console.log("ListMore msgData:", msgData); 
     const closeMenu = () => {
         hostInstance.chatEle.querySelector('.chat-actions-bottom-wraper').classList.add('close-bottom-slide');
         setTimeout(() => {
@@ -44,7 +45,7 @@ export function ListMore(props: any) {
             <div className="iner-data-scroll-wraper">
                 <div className="list-action-template-wrapper">
                     <div className="list-content-details">
-                        {msgData.message[0].component.payload.elements.map((ele: any, ind: any) => (
+                        {/* {msgData.message[0].component.payload.elements.map((ele: any, ind: any) => (
                             <div className="list-data-temp">
                                 <div className="img-with-content-block">
                                     <div className="img-block">
@@ -59,7 +60,46 @@ export function ListMore(props: any) {
                                 </div>
                                 {ele.buttons && ele.buttons[0] && <button className="kr-button-blue-light" onClick={() => handleClick(ele.buttons[0])}>{ele.buttons[0].title}</button>}
                                 {!ele.buttons && <a className="link-exteranl-list" href="#" target="_blank" onClick={() => handleClick(ele?.default_action)}>{ele?.default_action?.url}</a>}
-                            </div>))}
+                            </div>))} */}
+
+{msgData.message[0].component.payload.elements.map((ele: any, ind: any) => {
+    console.log("Element data:", ele); 
+    return (
+        <div className="list-data-temp" key={ind}>
+            <div className="img-with-content-block">
+                <div className="img-block">
+                    <figure>
+                        <img src={ele.image_url} alt={`Image for ${ele.title}`} />
+                    </figure>
+                </div>
+                <div className="content-details">
+                    <h1>{ele.title}</h1>
+                    <p>{ele.subtitle}</p>
+                    <p>{ele.description}</p>
+                </div>
+            </div>
+            {ele.buttons && ele.buttons[0] && (
+                <button
+                    className="kr-button-blue-light"
+                    onClick={() => handleClick(ele.buttons[0])}
+                >
+                    {ele.buttons[0].title}
+                </button>
+            )}
+            {!ele.buttons && ele?.default_action?.url && (
+                <a
+                    className="link-exteranl-list"
+                    href="#"
+                    target="_blank"
+                    onClick={() => handleClick(ele?.default_action)}
+                >
+                    {ele?.default_action?.url}
+                </a>
+            )}
+        </div>
+    );
+})}
+
                     </div>
                 </div> 
             </div>
@@ -77,8 +117,9 @@ export function List(props: any) {
     const helpers = KoreHelpers.helpers;
 
     const handleClick = (e: any) => {
-        if (e.type.toLowerCase() == 'postback' || e.type.toLowerCase() == 'text') {
-            hostInstance.sendMessage(e.payload || e.title || e.value, { renderMsg: e.title });
+        console.log("Payload clicked:", e);
+        if (e?.type?.toLowerCase() == 'postback' || e?.type?.toLowerCase() == 'text') {
+            hostInstance.sendMessage(e.payload || e.title || e.value, { renderMsg: e.payload || e.title });
         } else if (e.type == 'url' || e.type == 'web_url') {
             let link = e.url || e.fallback_url;
             if (link.indexOf('http:') < 0 && link.indexOf('https:') < 0) {
@@ -110,13 +151,56 @@ export function List(props: any) {
                                     </figure>
                                 </div>
                                 <div className="content-details">
+                                    <div dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele?.Brand, "bot") }}></div>
                                     <h1 dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele.title, "bot") }}></h1>
-                                    <p dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele.subtitle, "bot") }}></p>
+                                    <div className="price" dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele?.Price, "bot") }}></div>
+                                    <p dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele?.Description, "bot") }}></p>
                                 </div>
                             </div>
                             {ele.buttons && ele.buttons[0] && <button className="kr-button-blue-light" onClick={() => handleClick(ele.buttons[0])}>{ele.buttons[0].title}</button>}
-                            {!ele.buttons && <a className="link-exteranl-list" href="#" target="_blank" onClick={() => handleClick(ele?.default_action)}>{ele?.default_action?.url}</a>}
+                            {/* {!ele.buttons && <a className="link-exteranl-list" href="#" target="_blank" onClick={() => handleClick(ele?.default_action)}>{ele?.default_action?.url}</a>} */}
+                            {ele.buttons && ele.buttons[1] && <button className="kr-button-view-details" target="_blank" rel="noopener noreferrer" onClick={() => handleClick(ele?.buttons[1])}>{ele?.buttons[1]?.title}</button>}
+
                         </div>)))}
+
+                        {/* {msgData.message[0].component.payload.elements.map((ele: any, ind: any) => {
+    console.log("Element data:", ele); 
+
+    return (
+        ind < 3 && (
+            <div className="list-data-temp" key={ind}>
+                <div className="img-with-content-block">
+                    <div className="img-block">
+                        <figure>
+                            <img src={ele.image_url} />
+                        </figure>
+                    </div>
+                    <div className="content-details">
+                        <h1 dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele.title, "bot") }}></h1>
+                        <p dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele.subtitle, "bot") }}></p>
+                        <p dangerouslySetInnerHTML={{ __html: helpers.convertMDtoHTML(ele.description, "bot") }}></p>
+                    </div>
+                </div>
+
+                {ele.buttons && ele.buttons[0] && (
+                    <button className="kr-button-blue-light" onClick={() => handleClick(ele.buttons[0])}>
+                        {ele.buttons[0].title}
+                    </button>
+                )}
+
+                {ele.buttons && (
+                    <button
+                        className="kr-button-view-details"
+                        onClick={() => handleClick(ele?.default_action?.url)}
+                    >
+                        View details
+                    </button>
+                )}
+            </div>
+        )
+    );
+})} */}
+
                 </div>
                 { msgData.message[0].component.payload.elements.length > 3 && <button className="show-more-btn" onClick={() =>openSeeMoreTab(msgData.message[0].component.payload.buttons[0])}>{msgData.message[0].component.payload.buttons[0].title}</button>}
             </div>
